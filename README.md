@@ -1,7 +1,7 @@
 # Football Highlights
 Link to API used in App: https://www.scorebat.com/video-api/v1/
 
-Link to run page online: https://wmasicz.github.io/Football_highlights/#/
+Link to run page online: https://wmasicz.github.io/Football-Highlights/
 
 Usage:
 1. Click the league button
