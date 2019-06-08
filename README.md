@@ -1,4 +1,4 @@
-# Football_highlights
+# Football highlights
 Link to API used in App: https://www.scorebat.com/video-api/v1/
 
 Link to run page online: https://wmasicz.github.io/Football_highlights/#/
