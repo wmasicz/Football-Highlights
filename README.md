@@ -8,4 +8,4 @@ Usage:
 2. Choose a match which you're interested to check highlights
 3. Enjoy :)
 
-RWD in progress.
+Mobile in progress.
