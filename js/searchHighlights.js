@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
+import { Link, animateScroll as scroll } from "react-scroll";
 import {
     HashRouter,
     BrowserRouter,
     Route,
-    Link,
     Switch,
     NavLink,
 } from 'react-router-dom';
 import {Footer} from '../js/footer';
+import logo from '../src/img/logo.png';
 
 const URL = 'https://www.scorebat.com/video-api/v1/';
 
@@ -102,6 +103,10 @@ export class SearchHighlights extends Component {
         }
     };
 
+    scrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
     render() {
         // if(this.state.listOfLeagues.length) {
         //     console.log('3', this.state.listOfLeagues[0].competition.name);
@@ -109,17 +114,17 @@ export class SearchHighlights extends Component {
         // }
         return(
             <>
-                <a href={`#`}><img style={{"marginBottom": 20, "width": 400}} alt="logo" src="../src/img/logo.png" onClick={this.resetPage} /></a>
+                <a className="logo" href={`#`}><img style={{"marginBottom": 20, "width": 400}} alt="logo" src={logo} onClick={this.resetPage} /></a>
                 <div className="container">
                     <div className="leagues">
                         <h2 style={{"width": "100%", "marginBottom": 20}}>Nations/Leagues</h2>
                         {this.state.leagueBufferList.map((item, index)=>{
                             return (
-                                <a key={index} className={`league-btn ${item==this.state.match && "clicked"}`} href={`#`}  onClick={e =>this.showMatches(item)}  >{item}</a>
+                                <Link activeClass="active" to="listOfMatches" key={index} className={`league-btn ${item==this.state.match && "clicked"}`} href={`#`}  onClick={e =>this.showMatches(item)}  >{item}</Link>
                             )
                         })}
                     </div>
-                    <div className="listOfMatches" >
+                    <div className="listOfMatches" id="scrollDest" >
                         {this.state.listOfHighlights.filter((item)=>item.competition.name==this.state.match).map((item, index)=>{
                             return (
                                 <a key={item.index} className="match" href={`#/match_details/${item.title}`} target="_blank">
@@ -129,6 +134,7 @@ export class SearchHighlights extends Component {
                             )
                         })}
                     </div>
+                    <Link className="slideToTopBtn" activeClass="active" to="leagues"  >Go To Leagues</Link>
                 </div>
                 <Footer />
             </>

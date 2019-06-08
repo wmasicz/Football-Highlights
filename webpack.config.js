@@ -36,7 +36,18 @@ module.exports = {
                     "style-loader", // creates style nodes from JS strings
                     "css-loader", // translates CSS into CommonJS
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        },
+                    },
+                ],
+            },
         ]
     },
     plugins: [

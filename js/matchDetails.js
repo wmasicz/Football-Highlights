@@ -8,6 +8,7 @@ import {
     NavLink,
 } from 'react-router-dom';
 import {Footer} from '../js/footer';
+import logo from '../src/img/logo.png';
 
 const URL = 'https://www.scorebat.com/video-api/v1/';
 
@@ -54,7 +55,7 @@ export class Details extends Component {
         return(
             <>
                 <div className="container">
-                    <a href={`#`}><img style={{"width":200}} alt="logo" src="../src/img/logo.png" /></a>
+                    <a href={`#`}><img style={{"width":200}} alt="logo" src={logo} /></a>
                     <div className="match-info">
                         <h1 className="match-info-title">{this.props.match.params.name}</h1>
                         <p className="match-info-date" style={{"fontWeight": "bold"}}>{new Date(this.state.matchInfo.date).toLocaleDateString()}</p>
